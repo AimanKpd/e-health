@@ -48,6 +48,69 @@ $nokp = isset($_GET['nokp']) ? $_GET['nokp'] : '';
             </div>
         </header>
         <div class="book-details p-5 my-4">
+
+
+        <?php
+    // $pelajarRows = $_POST["pelajar_rows"];
+    $pelajarRows = [
+        // Row 1
+        ["namapelajar"=>"abc",
+        "nokp"=>"345678", 
+        "nomatrikpelajar"=>"312313312", 
+        "dorm"=>"a11",
+        "notelpelajar"=>"0113131",
+        "namabapapelajar"=>"a11",
+        "notelbapapelajar"=>"011392020",
+        "namaibupelajar"=>"abdwwqbdxde", 
+        "notelibupelajar"=>"423432432",
+        "alamatpelajar"=>"abccade3213123",
+        ""=>"",
+
+        ],
+        // Row 2
+        ["namapelajar"=>"abc",
+        ""=>"",
+        "nokp"=>"345678", 
+        "nomatrikpelajar"=>"312313312", 
+        "dorm"=>"a11",
+        "notelpelajar"=>"0113131",
+        "namabapapelajar"=>"a11",
+        "notelbapapelajar"=>"011392020",
+        "namaibupelajar"=>"abdwwqbdxde", 
+        "notelibupelajar"=>"423432432",
+        "alamatpelajar"=>"abccade3213123",
+    ],
+    ];
+
+    for ($i = 0; $i < sizeof($pelajarRows); $i++) {
+        $namapelajar = $pelajarRows[$i]["namapelajar"];
+        $nokp = $pelajarRows[$i]["nokp"];
+        $nomatrikpelajar = $pelajarRows[$i]["nomatrikpelajar"];
+        $dorm = $pelajarRows[$i]["dorm"];
+        $notelpelajar = $pelajarRows[$i]["notelpelajar"];
+        $namabapapelajar = $pelajarRows[$i]["namabapapelajar"];
+        $notelbapapelajar = $pelajarRows[$i]["notelbapapelajar"];
+        $namaibupelajar = $pelajarRows[$i]["namaibupelajar"];
+        $notelibupelajar = $pelajarRows[$i]["notelibupelajar"];
+        $alamatpelajar = $pelajarRows[$i]["alamatpelajar"];
+?>
+        <div>
+            <p>Name: <?php echo $namapelajar; ?></p>
+            <p>NRIC/Passport: <?php echo $nokp; ?></p>
+            <p>Matric Number: <?php echo $nomatrikpelajar; ?></p>
+            <p>Dormitory: <?php echo $dorm; ?></p>
+            <p>Phone Number: <?php echo $notelpelajar; ?></p>
+            <p>Father's Name: <?php echo $namabapapelajar; ?></p>
+            <p>Father's Phone: <?php echo $notelbapapelajar; ?></p>
+            <p>Mother's Name: <?php echo $namaibupelajar; ?></p>
+            <p>Mother's Phone: <?php echo $notelibupelajar; ?></p>
+            <p>Address: <?php echo $alamatpelajar; ?></p>
+        </div>
+<?php
+    }
+?>
+
+
             <?php
 
 $conn = mysqli_connect("localhost", "root", "", "e-health");

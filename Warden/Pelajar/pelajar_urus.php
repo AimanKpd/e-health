@@ -78,7 +78,6 @@ $conn = $databaseObj->getConnection();
             <table id="profilpelajar" class="table table-striped" width="100%">
                 <thead>
                     <tr>
-                        <th>Pilih</th>
                         <th>Bil</th>
                         <th>Nama Pelajar</th>
                         <th>Nombor KP</th>
@@ -97,7 +96,7 @@ $conn = $databaseObj->getConnection();
                 <tbody>
                     <?php
                     // Establish a database connection
-                    $conn = mysqli_connect("localhost", "root", "", "e-health");
+                    $conn = mysqli_connect("localhost", "root","","e-health");
                     if (!$conn) {
                         die("Connection failed: " . mysqli_connect_error());
                     }
@@ -112,7 +111,6 @@ $conn = $databaseObj->getConnection();
 
 while ($row = mysqli_fetch_assoc($query)) {
     echo "<tr data-id='{$row['id']}'>";
-    echo "<td><input type='checkbox' name='item[]' value='{$row['id']}'></td>";
     echo "<td>{$cnt}</td>";
     echo "<td>{$row['namapelajar']}</td>";
     echo "<td>{$row['nokp']}</td>";
@@ -125,10 +123,10 @@ while ($row = mysqli_fetch_assoc($query)) {
     echo "<td>{$row['notelibupelajar']}</td>";
     echo "<td>{$row['alamatpelajar']}</td>";
     echo "<td>";
-    echo "<a href=\"pelajar_urus_individu.php?id={$row['id']}\"><button class='btn btn-sm btn-outline-primary' ><i class='fa-solid fa-eye'></i>&nbsp;Lihat</button></a>";
+    echo "<a href=\"pelajar_urus_individu.php?id={$row['id']}\"><button class='btn btn-sm btn-outline-primary'><i class='fa-solid fa-eye'></i>&nbsp;Lihat</button></a>";
     echo "</td>";
     echo "<td>";
-    echo "<a href=\"delete.php?id={$row['id']}\"><button class=' btn btn-sm btn-outline-danger' ><i class='fa-solid fa-trash'></i>&nbsp;Buang</button></a>";
+    echo "<a href=\"delete.php?id={$row['id']}\"><button class=' btn btn-sm btn-outline-danger'><i class='fa-solid fa-trash'></i>&nbsp;Buang</button></a>";
     echo "</td>";
     echo "</tr>";
 }
