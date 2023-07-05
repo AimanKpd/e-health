@@ -147,6 +147,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $cnt = 1;
 
                         while ($row = mysqli_fetch_assoc($query)) {
+                            echo "<form action='".WARDEN_URL."/JanjiTemu/jadual_warden_urus_print.php' method='POST' id='janjitemuRow'>";
                             echo "<tr id='row{$row['id_pelajar']}'>";
                             echo "<td><input type='checkbox' name='item[]' value='{$row['id_pelajar']}'></td>";
                             echo "<td>{$cnt}</td>";
@@ -155,11 +156,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             echo "<td>{$row['waktujtpelajar']}</td>";
                             echo "<td id='status{$row['id_pelajar']}'>{$row['status']}</td>";
                             echo "<td>
-                            <button type='button' style='background-color: #a7ebc6;border-color: #a7ebc6;' class='m-2 btn btn-primary' onclick='acceptApplication(\"{$row['id_pelajar']}\")'>Accept</button>
-                                    <button type='button' style='background-color: #e4eb14;border-color: #e4eb14;' class='m-2 btn btn-primary' onclick='rejectApplication(\"{$row['id_pelajar']}\")'>Reject</button>
-                                    <button type='button' style='background-color: #ff2f16;border-color: #ff2f16;' class='m-2 btn btn-primary' onclick='deleteApplication(\"{$row['id_pelajar']}\")'>Delete</button>
+                                    <button type='submit' style='background-color: #a7ebc6;border-color: #a7ebc6;' class='m-2 btn btn-primary' onclick='acceptApplication(\"{$row['id_pelajar']}\")'>Accept</button>
+                                    <button type='submit' style='background-color: #e4eb14;border-color: #e4eb14;' class='m-2 btn btn-primary' onclick='rejectApplication(\"{$row['id_pelajar']}\")'>Reject</button>
+                                    <button type='submit' style='background-color: #ff2f16;border-color: #ff2f16;' class='m-2 btn btn-primary' onclick='deleteApplication(\"{$row['id_pelajar']}\")'>Delete</button>
+                                    <button type='submit' style='background-color: #ff2f16;border-color: #ff2f16;' class='m-2 btn btn-primary' onclick='deleteApplication(\"{$row['id_pelajar']}\")'>Delete</button>
                                 </td>";
                             echo "</tr>";
+                            echo "</form>";
 
                             $cnt++; // Increment $cnt after each iteration
                         }
@@ -184,6 +187,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script>
     $("#janjitemupelajar").ready(function(){
         $("#janjitemupelajar").DataTable();
+        $("#janjitemuRow").on("submit", function(e){
+            // Prevent sending fo
+            e.preventDefault();
+
+            
+        });
     });
 </script>
 </html>

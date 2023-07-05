@@ -534,7 +534,7 @@ $conn = $databaseObj->getConnection();
 
                             <!-- Profil -->
                             <li class="nav-item">
-                                <a href="<?php echo (WARDEN_URL . "/Profil/profil.php"); ?>" class="nav-link nav-item-header" data-abc="true">
+                                <a href="<?php echo (GURU_URL . "/Profil/profil.php"); ?>" class="nav-link nav-item-header" data-abc="true">
                                     <i class='bx bx-user-circle'></i>
                                     Profil
                                 </a>
@@ -543,7 +543,7 @@ $conn = $databaseObj->getConnection();
                             <!-- Janji Temu -->
                             <li class="nav-item-header">Janji Temu</li>
                             <li class="nav-item">
-                                <a href="<?php echo (WARDEN_URL . "/JanjiTemu/janji_temu_urus.php"); ?>" class="nav-link" data-abc="true">
+                                <a href="<?php echo (GURU_URL . "/JanjiTemu/janji_temu_urus.php"); ?>" class="nav-link" data-abc="true">
                                     <i class='bx bx-list-ol'></i>
                                     Urus Janji Temu
                                 </a>
@@ -552,7 +552,7 @@ $conn = $databaseObj->getConnection();
                             <!-- Urus pengguna -->
                             <li class="nav-item-header">Urus Pengguna</li>
                             <li class="nav-item">
-                                <a href="<?php echo (WARDEN_URL . "/Pelajar/pelajar_urus.php"); ?>" class="nav-link" data-abc="true">
+                                <a href="<?php echo (GURU_URL . "/Pelajar/pelajar_urus.php"); ?>" class="nav-link" data-abc="true">
                                     <i class='bx bx-list-ol'></i>
                                     Urus Pelajar
                                 </a>
@@ -561,7 +561,7 @@ $conn = $databaseObj->getConnection();
                             <!-- Urus jadual -->
                             <li class="nav-item-header">Urus Jadual</li>
                             <li class="nav-item">
-                                <a href="<?php echo (WARDEN_URL . "/Warden/jadual_warden_urus.php"); ?>" class="nav-link" data-abc="true">
+                                <a href="<?php echo (GURU_URL . "/Jadual/jadual_guru_urus.php"); ?>" class="nav-link" data-abc="true">
                                     <i class='bx bx-list-ol'></i>
                                     Urus Jadual Guru
                                 </a>

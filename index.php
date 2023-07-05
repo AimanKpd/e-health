@@ -94,7 +94,7 @@ $slideshowManager->addImage(UPLOADS_URL."/jadual"."/".$jadualModel->getAllWarden
                 require_once(COMPONENTS_DIR . "/config.php");
                 $conn = new Database();
                 $janjitemuModel = new JanjitemuModel($conn->getConnection());
-                $janjitemuRows = $janjitemuModel->getAllJanjitemuColumns(["namapelajar", "programjtpelajar", "waktujtpelajar", "tarikhjtpelajar", "sebabjt", "status"]);
+                $janjitemuRows = $janjitemuModel->getAllJanjitemuColumns(["waktujtpelajar", "sebabjt", "status"]);
                 // Converts janjitemupelajar entries into JSON so that it can be parsed by JS
                 $janjitemuRowsJSON = json_encode($janjitemuRows);
             ?>
