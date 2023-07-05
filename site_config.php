@@ -4,7 +4,7 @@
     // 
     require_once('vendor/autoload.php');
 
-    // e-health2 site configuration
+    // e-health site configuration
     define("HOST", $_SERVER['SERVER_NAME']);
     define("HOST_URL", "http://".HOST);
     define("SITE_NAME", "e-health");
